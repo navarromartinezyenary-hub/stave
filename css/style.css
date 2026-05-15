@@ -97,6 +97,10 @@ body {
 
     margin-left: auto;
     margin-right: auto;
+
+    color: #FFCE10;
+    font-family: Impact, sans-serif;
+    text-transform: uppercase;
 }
 
 .hero p {
