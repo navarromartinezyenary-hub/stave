@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    console.log('Sitio web de Constructora STAVE cargado correctamente.');
+    console.log('Sitio web cargado correctamente');
 
     /* =========================
        MENÚ HAMBURGUESA
@@ -25,6 +25,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* =========================
+       CERRAR MENÚ AL HACER CLICK
+    ========================= */
+
+    const menuItems = document.querySelectorAll('.nav-links a');
+
+    menuItems.forEach(function (item) {
+
+        item.addEventListener('click', function () {
+
+            if (navLinks.classList.contains('active')) {
+
+                navLinks.classList.remove('active');
+
+            }
+
+        });
+
+    });
+
+    /* =========================
        SCROLL SUAVE
     ========================= */
 
@@ -34,23 +54,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
         enlace.addEventListener('click', function (e) {
 
-            e.preventDefault();
+            const destinoID = this.getAttribute('href');
 
-            const destino = document.querySelector(
-                this.getAttribute('href')
-            );
+            /* SOLO enlaces internos */
 
-            if (destino) {
+            if (destinoID.length > 1) {
 
-                destino.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const destino = document.querySelector(destinoID);
 
-                /* CERRAR MENÚ EN MÓVIL */
+                if (destino) {
 
-                if (navLinks) {
-                    navLinks.classList.remove('active');
+                    e.preventDefault();
+
+                    destino.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
                 }
+
             }
 
         });
