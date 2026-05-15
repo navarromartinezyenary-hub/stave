@@ -12,6 +12,10 @@ body {
     background-color: #ffffff;
     overflow-x: hidden;
 }
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
 
 /* ENCABEZADO */
 header {
@@ -33,11 +37,12 @@ header p {
     font-size: 1.2rem;
 }
 .logo {
-    width: 180px;
-    max-width: 70%;
+    width: 100%;
+    max-width: 420px;
     height: auto;
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
 /* HERO */
 .hero {
@@ -130,30 +135,58 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
     .logo {
-        width: 90px;
-        max-width: 45%;
+        max-width: 280px;
     }
 
     header h1 {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
 
     header p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 70px 20px;
     }
 
     .hero h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        line-height: 1.3;
     }
 
     .hero p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 50px 15px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    .servicio {
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     .btn {
-        padding: 10px 20px;
+        padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
